@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
+    tools:context=".TodayWeatherFragment">
+    <LinearLayout
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:id="@+id/weather_pannel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/txt_city_name"
+            android:text="Weather in DongHoi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/img_weather"
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
+            <TextView
+                android:textStyle="bold"
+                android:textSize="50sp"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/txt_nhietdo"
+                android:text="28 C"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <TextView
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/txt_mota"
+            android:text="Chi Tiết"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/txt_date_time"
+            android:text="DateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:padding="16dp"
+            android:stretchColumns="*">
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Wind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:hint="wind"
+                    android:id="@+id/txt_wind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Pressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:hint="Pressure"
+                    android:id="@+id/txt_pressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Humidyti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:hint="wind"
+                    android:id="@+id/txt_humidyti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Binh minh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:hint="11:00"
+                    android:id="@+id/txt_sunrise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Hoang hon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:hint="18:00"
+                    android:id="@+id/txt_sunset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Geocoords"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:hint="Geocoords"
+                    android:id="@+id/txt_geocoords"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </TableRow>
+        </TableLayout>
+
+
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+</RelativeLayout>
